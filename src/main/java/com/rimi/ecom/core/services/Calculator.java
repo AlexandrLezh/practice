@@ -24,12 +24,6 @@ public class Calculator {
 
     private Double evaluateFormula(String input) {
         DoubleEvaluator evaluator = new DoubleEvaluator();
-        try {
-            Double result = evaluator.evaluate(input);
-            System.out.println("Result: " + result);
-        } catch (IllegalArgumentException e) {
-            System.err.println("Invalid formula: " + e.getMessage());
-        }
         return evaluator.evaluate(input);
    }
 }
