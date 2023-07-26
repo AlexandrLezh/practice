@@ -32,7 +32,7 @@ public class StringValidator {
                 : Optional.of(new CoreError("Input", "Received input contain wrong symbols"));
     }
     private Optional<CoreError> isContainsOnlyMathOperators(CalculatorRequest request) {
-        String regex = "^[+\\-*/()]+$";
+        String regex = "^[+\\-*/()]+$"; // Define the regular expression pattern to math operands ( (, ), +, -, *, /)
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(request.getInput());
         return matcher.matches()
