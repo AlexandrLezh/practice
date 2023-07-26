@@ -12,9 +12,11 @@ import java.util.regex.Matcher;
 public class StringValidator {
     public List<CoreError> validate(CalculatorRequest request) {
         List<CoreError> errors = new ArrayList<>();
+
         isStringNull(request).ifPresent(errors::add);
         isStringContainOnlyNumbersAndMathOperators(request).ifPresent(errors::add);
         isContainsOnlyMathOperators(request).ifPresent(errors::add);
+
         return errors;
     }
     private Optional<CoreError> isStringNull(CalculatorRequest request) {
@@ -32,7 +34,7 @@ public class StringValidator {
                 : Optional.of(new CoreError("Input", "Received input contain wrong symbols"));
     }
     private Optional<CoreError> isContainsOnlyMathOperators(CalculatorRequest request) {
-        String regex = "^[+\\-*/()]+$";
+        String regex = "^[+\\-*/()]+$"; // Define the regular expression pattern to math operands ( (, ), +, -, *, /)
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(request.getInput());
         return matcher.matches()
