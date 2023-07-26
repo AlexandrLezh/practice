@@ -1,6 +1,5 @@
 package com.rimi.ecom.core.responces;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
