@@ -9,5 +9,4 @@ import java.math.BigDecimal;
 public class CalculationEntity {
     private String formula;
     private BigDecimal result;
-    private String resultFromMessage;
 }

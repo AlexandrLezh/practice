@@ -1,4 +1,4 @@
-package com.rimi.ecom.core.responces;
+package com.rimi.ecom.core.validators;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

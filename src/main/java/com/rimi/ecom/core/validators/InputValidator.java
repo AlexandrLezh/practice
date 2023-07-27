@@ -1,7 +1,6 @@
 package com.rimi.ecom.core.validators;
 
 import com.rimi.ecom.core.request.CalculatorRequest;
-import com.rimi.ecom.core.responces.CoreError;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,19 +8,23 @@ import java.util.Optional;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 @Service
-public class StringValidator {
+public class InputValidator {
     public List<CoreError> validate(CalculatorRequest request) {
         List<CoreError> errors = new ArrayList<>();
 
-        isStringNull(request).ifPresent(errors::add);
+        if (request == null || request.getInput() == null) {
+            errors.add(new CoreError("Input", "Received input is null"));
+            return errors;
+        }
+        isStringEmpty(request).ifPresent(errors::add);
         isStringContainOnlyNumbersAndMathOperators(request).ifPresent(errors::add);
         isContainsOnlyMathOperators(request).ifPresent(errors::add);
-
         return errors;
     }
-    private Optional<CoreError> isStringNull(CalculatorRequest request) {
-        return (request.getInput() == null || request.getInput().isEmpty())
-                ? Optional.of(new CoreError("Input", "Received input is null or Empty"))
+
+    private Optional<CoreError> isStringEmpty(CalculatorRequest request) {
+        return (request.getInput().isEmpty())
+                ? Optional.of(new CoreError("Input", "Received input is Empty"))
                 : Optional.empty();
     }
     private Optional<CoreError> isStringContainOnlyNumbersAndMathOperators(CalculatorRequest request) {
