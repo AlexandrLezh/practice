@@ -1,7 +1,7 @@
 package com.rimi.ecom.rest;
 
-import com.rimi.ecom.core.request.CalculatorRequest;
-import com.rimi.ecom.core.responces.CalculatorResponse;
+import com.rimi.ecom.core.dto.CalculatorRequest;
+import com.rimi.ecom.core.dto.CalculatorResponse;
 import com.rimi.ecom.core.validators.CoreError;
 import com.rimi.ecom.core.services.CacheService;
 import com.rimi.ecom.core.services.CalculatorService;

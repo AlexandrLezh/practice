@@ -1,4 +1,4 @@
-package com.rimi.ecom.core.responces;
+package com.rimi.ecom.core.dto;
 
 import com.rimi.ecom.core.validators.CoreError;
 import lombok.Data;

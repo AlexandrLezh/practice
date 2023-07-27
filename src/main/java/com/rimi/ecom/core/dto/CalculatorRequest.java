@@ -1,4 +1,4 @@
-package com.rimi.ecom.core.request;
+package com.rimi.ecom.core.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

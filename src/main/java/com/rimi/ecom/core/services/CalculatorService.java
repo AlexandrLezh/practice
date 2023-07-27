@@ -2,8 +2,8 @@ package com.rimi.ecom.core.services;
 
 import com.fathzer.soft.javaluator.DoubleEvaluator;
 import com.rimi.ecom.core.domain.CalculationEntity;
-import com.rimi.ecom.core.request.CalculatorRequest;
-import com.rimi.ecom.core.responces.CalculatorResponse;
+import com.rimi.ecom.core.dto.CalculatorRequest;
+import com.rimi.ecom.core.dto.CalculatorResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.math.BigDecimal;

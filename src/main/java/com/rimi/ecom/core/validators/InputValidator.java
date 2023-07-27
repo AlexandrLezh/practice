@@ -1,6 +1,6 @@
 package com.rimi.ecom.core.validators;
 
-import com.rimi.ecom.core.request.CalculatorRequest;
+import com.rimi.ecom.core.dto.CalculatorRequest;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
